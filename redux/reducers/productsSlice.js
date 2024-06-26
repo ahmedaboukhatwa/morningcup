@@ -1,4 +1,4 @@
-const { createSlice } = require("@reduxjs/toolkit");
+import { createSlice } from '@reduxjs/toolkit';
 
 const productsSlice = createSlice({
     name :"products",
@@ -13,6 +13,13 @@ const productsSlice = createSlice({
             {Name:"كيس جمرات",Src:"/images/content7.jpg"},
            ]
     },
-    reducers:{}
+    reducers:{
+        show(state,actions) {
+            console.log(state,actions);
+          },
+    }
 })
-export default productsSlice ;
+export const {show} = productsSlice.actions;
+
+// (.reducer) is very important
+export default productsSlice.reducer ;
