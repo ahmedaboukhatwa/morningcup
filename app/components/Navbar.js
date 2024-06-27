@@ -38,7 +38,7 @@ export default function Navbar() {
     
         <div className='logo w-10 h-14 relative overflow-hidden'>
         <Image
-            src="/images/logo.jpg" // Replace with the actual path to your image
+            src="/images/logo.png" // Replace with the actual path to your image
             alt="My Image"
            fill
               />       
