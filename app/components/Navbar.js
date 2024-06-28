@@ -4,49 +4,44 @@ import { Fragment } from "react"
 
 import Image from 'next/image';
 import { useDispatch, useSelector } from "react-redux";
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faHeart } from '@fortawesome/free-regular-svg-icons'
+import { faCartShopping } from '@fortawesome/free-solid-svg-icons'
+import Link from "next/link";
 export default function Navbar() {
   const dispatch = useDispatch();
   console.log("dispatch",dispatch);
   const productsList = useSelector(state=>state.products.productsList);
-  // const contentList = useSelector(state => state.content.contentList);
 
-  console.log(productsList);
-  let frontMap = productsList.map((project,i)=>{
-    return(
-      <li key={i} className='w-full flex justify-between items-center  border-2 mb-4 relative rounded-xl oveflow-hidden h-72 '>
-          <div className='relative h-full w-1/2 overflow-hidden bg-red-200'>
-              <Image
-            src={project.Src} // Replace with the actual path to your image
-            alt="My Image"
-            fill
-          />
-          </div>
-            <div className='w-1/2 '>
-               <h3 className='text-3xl text-end pr-2 lg:pr-10'>{project.Name}</h3>
-            </div>
-        </li>
-      )
- })
+  // const contentList = useSelector(state => state.content.contentList);fsda
   return (
     <Fragment>
     <nav className='flex justify-between border-b-2 rounded-b-md items-center w-full 
     px-2 sm:px-10 md:px-24 lg:px-42 xl:px-48'>   
-        <button className='bg-blue-600 text-white rounded-lg px-24 py-2' 
-         onClick={()=>{scrollTo({top: 1500,behavior: "smooth"})}}
-        >اطلبها الآن
-        </button>
-    
-        <div className='logo w-10 h-14 relative overflow-hidden'>
+       <div className='logo w-14 h-14 relative overflow-hidden'>
         <Image
             src="/images/logo.png" // Replace with the actual path to your image
             alt="My Image"
            fill
               />       
          </div>
+         <ul className="flex">
+                    <Link href='/favorited'>
+                        <div>
+                            <FontAwesomeIcon className='h-12 w-10' icon={faHeart} />
+                            <span>
+                            0
+                            </span>
+                        </div>
+                    </Link>
+                    <Link href='/cart'>
+                        <div>
+                            <FontAwesomeIcon className='h-12 w-10' icon={faCartShopping} />
+                            <span>0</span>
+                        </div>
+                    </Link>
+                </ul>
     </nav>
-    <ul className='flex flex-wrap flex-col text-start '>
-            {frontMap}
-        </ul>
     </Fragment>
   );
   }
