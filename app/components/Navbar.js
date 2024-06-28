@@ -27,16 +27,16 @@ export default function Navbar() {
          </div>
          <ul className="flex">
                     <Link href='/favorited'>
-                        <div>
-                            <FontAwesomeIcon className='h-12 w-10' icon={faHeart} />
+                        <div className='mr-2'>
+                            <FontAwesomeIcon className='h-6 w-4' icon={faHeart} />
                             <span>
                             0
                             </span>
                         </div>
                     </Link>
                     <Link href='/cart'>
-                        <div>
-                            <FontAwesomeIcon className='h-12 w-10' icon={faCartShopping} />
+                        <div className='mr-2'>
+                            <FontAwesomeIcon className='h-6 w-4' icon={faCartShopping} />
                             <span>0</span>
                         </div>
                     </Link>
