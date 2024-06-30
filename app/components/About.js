@@ -3,7 +3,7 @@
 import { Fragment } from "react"
 import Image from 'next/image';
 import { useDispatch, useSelector } from "react-redux";
-export default function Navbar() {
+export default function About() {
   const dispatch = useDispatch();
   console.log("dispatch",dispatch);
   const productsList = useSelector(state=>state.products.productsList);
