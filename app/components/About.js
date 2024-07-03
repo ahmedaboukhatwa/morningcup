@@ -26,14 +26,14 @@ export default function About() {
         </div>
         <div style={{height:"200px",width:"400px",position:"relative"}}>
         <Image
-            src="/images/coffee.jpg" // Replace with the actual path to your image
+            src="/images/bakery.jpg" // Replace with the actual path to your image
             alt="My Image"
             fill
               />  
         </div>
         <div style={{height:"200px",width:"400px",position:"relative"}}>
         <Image
-            src="/images/coffee.jpg" // Replace with the actual path to your image
+            src="/images/packages.jpg" // Replace with the actual path to your image
             alt="My Image"
             fill
               />  
